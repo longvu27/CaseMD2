@@ -36,30 +36,30 @@ function menuLogin() {
 
 function login() {
     console.log(`<<< Bạn Đang Ở Phần Đăng Nhập >>>`);
-    console.log(`- Bạn phải nhập id đủ 3 chữ số và không có chữ cái hoặc ký tứ đặc biệt nào mới được -`);
+    console.log(`-- Bạn phải nhập id đủ 3 chữ số và không có chữ cái hoặc ký tứ đặc biệt nào mới được --`);
     let id = input.question('Nhap id: ');
     let idRegex = /^([0-9]){3,}$/;
     let testId = idRegex.test(id);
     if (testId == false) {
         console.log(` Nhập lại đê`);
-        login();
+        menuLogin();
     }
 
-    console.log(`- Nhập tên đăng nhập phải đủ 5 ký tự, chỉ chứa chữ cái thôi mới được cơ -`);
+    console.log(`-- Nhập tên đăng nhập phải đủ 5 ký tự, chỉ chứa chữ cái thôi mới được cơ --`);
     let name = input.question('Nhap ten dang nhap cua ban: ');
     let nameRegex = /^([A-Za-z]){5,}$/;
     let testName = nameRegex.test(name);
     if (testName == false) {
-        console.log(`- Đã bảo nhập cho đúng rồi không nghe, nhập lại cả Id nhé -`);
-        login();
+        console.log(`-- Đã bảo nhập cho đúng rồi không nghe, nhập lại cả Id nhé --`);
+        menuLogin();
     }
 
-    console.log(`- Chỉ được nhập số thôi, 4 số nhé -`);
+    console.log(`-- Chỉ được nhập số thôi, 4 số nhé --`);
     let password = input.question('Nhap mat khau: ');
     let passwordRegex = /^([0-9]){4,}$/;
     let testPass = passwordRegex.test(password);
     if (testPass == false) {
-        console.log('- Nhập sai rồi, nhập lại từ đầu nhé, ai bảo nhập sai chiiiiii -');
+        console.log('-- Nhập sai rồi, nhập lại từ đầu nhé, ai bảo nhập sai chiiiiii --');
     }
 
 
@@ -80,38 +80,39 @@ function login() {
 
 function signUp() {
     console.log(`<<<Bạn Đang Ở Phần Đăng Ký>>>`);
-    console.log(`- Bạn phải nhập id đủ 3 chữ số và không có chữ cái hoặc ký tứ đặc biệt nào mới được -`);
+    console.log(`-- Bạn phải nhập id đủ 3 chữ số và không có chữ cái hoặc ký tứ đặc biệt nào mới được --`);
     let id = input.question('Nhap id: ');
     let idRegex = /^([0-9]){3,}$/;
     let testId = idRegex.test(id);
     if (testId == false) {
         console.log(`- Nhập lại đê -`);
-        login();
+        menuLogin();
     }
 
     for (let i = 0; i < listAccount.listAccount.length; i++) {
         if (listAccount.listAccount[i].id == id) {
             console.log('<<<Id Da Ton Tai, Moi Ban Nhap Lai>>>');
-            signUp();
+            menuLogin();
         } else {
         }
     }
 
-    console.log(`- Nhập tên đăng nhập phải đủ 5 ký tự, chỉ chứa chữ cái thôi mới được cơ -`);
+    console.log(`-- Nhập tên đăng nhập phải đủ 5 ký tự, chỉ chứa chữ cái thôi mới được cơ --`);
     let name = input.question('Nhap ten dang nhap cua ban: ');
     let nameRegex = /^([A-Za-z]){5,}$/;
     let testName = nameRegex.test(name);
     if (testName == false) {
-        console.log(`- Đã bảo nhập cho đúng rồi không nghe, nhập lại cả Id nhé -`);
-        login();
+        console.log(`-- Đã bảo nhập cho đúng rồi không nghe, nhập lại cả Id nhé --`);
+        menuLogin();
     }
 
-    console.log(`- Chỉ được nhập số thôi, 4 số nhé -`);
+    console.log(`-- Chỉ được nhập số thôi, 4 số nhé --`);
     let password = input.question('Nhap mat khau: ');
     let passwordRegex = /^([0-9]){4,}$/;
     let testPass = passwordRegex.test(password);
     if (testPass == false) {
-        console.log('- Nhập sai rồi, nhập lại từ đầu nhé, ai bảo nhập sai chiiiiii -');
+        console.log('-- Nhập sai rồi, nhập lại từ đầu nhé, ai bảo nhập sai chiiiiii --');
+        menuLogin();
     }
     let newUser = new Account(id, name, password);
     listAccount.add(newUser);

@@ -30,28 +30,28 @@ function menuLogin() {
 }
 function login() {
     console.log("<<< B\u1EA1n \u0110ang \u1EDE Ph\u1EA7n \u0110\u0103ng Nh\u1EADp >>>");
-    console.log("- B\u1EA1n ph\u1EA3i nh\u1EADp id \u0111\u1EE7 3 ch\u1EEF s\u1ED1 v\u00E0 kh\u00F4ng c\u00F3 ch\u1EEF c\u00E1i ho\u1EB7c k\u00FD t\u1EE9 \u0111\u1EB7c bi\u1EC7t n\u00E0o m\u1EDBi \u0111\u01B0\u1EE3c -");
+    console.log("-- B\u1EA1n ph\u1EA3i nh\u1EADp id \u0111\u1EE7 3 ch\u1EEF s\u1ED1 v\u00E0 kh\u00F4ng c\u00F3 ch\u1EEF c\u00E1i ho\u1EB7c k\u00FD t\u1EE9 \u0111\u1EB7c bi\u1EC7t n\u00E0o m\u1EDBi \u0111\u01B0\u1EE3c --");
     var id = input.question('Nhap id: ');
     var idRegex = /^([0-9]){3,}$/;
     var testId = idRegex.test(id);
     if (testId == false) {
         console.log(" Nh\u1EADp l\u1EA1i \u0111\u00EA");
-        login();
+        menuLogin();
     }
-    console.log("- Nh\u1EADp t\u00EAn \u0111\u0103ng nh\u1EADp ph\u1EA3i \u0111\u1EE7 5 k\u00FD t\u1EF1, ch\u1EC9 ch\u1EE9a ch\u1EEF c\u00E1i th\u00F4i m\u1EDBi \u0111\u01B0\u1EE3c c\u01A1 -");
+    console.log("-- Nh\u1EADp t\u00EAn \u0111\u0103ng nh\u1EADp ph\u1EA3i \u0111\u1EE7 5 k\u00FD t\u1EF1, ch\u1EC9 ch\u1EE9a ch\u1EEF c\u00E1i th\u00F4i m\u1EDBi \u0111\u01B0\u1EE3c c\u01A1 --");
     var name = input.question('Nhap ten dang nhap cua ban: ');
     var nameRegex = /^([A-Za-z]){5,}$/;
     var testName = nameRegex.test(name);
     if (testName == false) {
-        console.log("- \u0110\u00E3 b\u1EA3o nh\u1EADp cho \u0111\u00FAng r\u1ED3i kh\u00F4ng nghe, nh\u1EADp l\u1EA1i c\u1EA3 Id nh\u00E9 -");
-        login();
+        console.log("-- \u0110\u00E3 b\u1EA3o nh\u1EADp cho \u0111\u00FAng r\u1ED3i kh\u00F4ng nghe, nh\u1EADp l\u1EA1i c\u1EA3 Id nh\u00E9 --");
+        menuLogin();
     }
-    console.log("- Ch\u1EC9 \u0111\u01B0\u1EE3c nh\u1EADp s\u1ED1 th\u00F4i, 4 s\u1ED1 nh\u00E9 -");
+    console.log("-- Ch\u1EC9 \u0111\u01B0\u1EE3c nh\u1EADp s\u1ED1 th\u00F4i, 4 s\u1ED1 nh\u00E9 --");
     var password = input.question('Nhap mat khau: ');
     var passwordRegex = /^([0-9]){4,}$/;
     var testPass = passwordRegex.test(password);
     if (testPass == false) {
-        console.log('- Nhập sai rồi, nhập lại từ đầu nhé, ai bảo nhập sai chiiiiii -');
+        console.log('-- Nhập sai rồi, nhập lại từ đầu nhé, ai bảo nhập sai chiiiiii --');
     }
     if (listAccount.listAccount.length == 0) {
         console.log('!!!Dang nhap that bai, vui long nhap lai hoac tao tai khoan moi!!!');
@@ -69,36 +69,37 @@ function login() {
 }
 function signUp() {
     console.log("<<<B\u1EA1n \u0110ang \u1EDE Ph\u1EA7n \u0110\u0103ng K\u00FD>>>");
-    console.log("- B\u1EA1n ph\u1EA3i nh\u1EADp id \u0111\u1EE7 3 ch\u1EEF s\u1ED1 v\u00E0 kh\u00F4ng c\u00F3 ch\u1EEF c\u00E1i ho\u1EB7c k\u00FD t\u1EE9 \u0111\u1EB7c bi\u1EC7t n\u00E0o m\u1EDBi \u0111\u01B0\u1EE3c -");
+    console.log("-- B\u1EA1n ph\u1EA3i nh\u1EADp id \u0111\u1EE7 3 ch\u1EEF s\u1ED1 v\u00E0 kh\u00F4ng c\u00F3 ch\u1EEF c\u00E1i ho\u1EB7c k\u00FD t\u1EE9 \u0111\u1EB7c bi\u1EC7t n\u00E0o m\u1EDBi \u0111\u01B0\u1EE3c --");
     var id = input.question('Nhap id: ');
     var idRegex = /^([0-9]){3,}$/;
     var testId = idRegex.test(id);
     if (testId == false) {
         console.log("- Nh\u1EADp l\u1EA1i \u0111\u00EA -");
-        login();
+        menuLogin();
     }
     for (var i = 0; i < listAccount.listAccount.length; i++) {
         if (listAccount.listAccount[i].id == id) {
             console.log('<<<Id Da Ton Tai, Moi Ban Nhap Lai>>>');
-            signUp();
+            menuLogin();
         }
         else {
         }
     }
-    console.log("- Nh\u1EADp t\u00EAn \u0111\u0103ng nh\u1EADp ph\u1EA3i \u0111\u1EE7 5 k\u00FD t\u1EF1, ch\u1EC9 ch\u1EE9a ch\u1EEF c\u00E1i th\u00F4i m\u1EDBi \u0111\u01B0\u1EE3c c\u01A1 -");
+    console.log("-- Nh\u1EADp t\u00EAn \u0111\u0103ng nh\u1EADp ph\u1EA3i \u0111\u1EE7 5 k\u00FD t\u1EF1, ch\u1EC9 ch\u1EE9a ch\u1EEF c\u00E1i th\u00F4i m\u1EDBi \u0111\u01B0\u1EE3c c\u01A1 --");
     var name = input.question('Nhap ten dang nhap cua ban: ');
     var nameRegex = /^([A-Za-z]){5,}$/;
     var testName = nameRegex.test(name);
     if (testName == false) {
-        console.log("- \u0110\u00E3 b\u1EA3o nh\u1EADp cho \u0111\u00FAng r\u1ED3i kh\u00F4ng nghe, nh\u1EADp l\u1EA1i c\u1EA3 Id nh\u00E9 -");
-        login();
+        console.log("-- \u0110\u00E3 b\u1EA3o nh\u1EADp cho \u0111\u00FAng r\u1ED3i kh\u00F4ng nghe, nh\u1EADp l\u1EA1i c\u1EA3 Id nh\u00E9 --");
+        menuLogin();
     }
-    console.log("- Ch\u1EC9 \u0111\u01B0\u1EE3c nh\u1EADp s\u1ED1 th\u00F4i, 4 s\u1ED1 nh\u00E9 -");
+    console.log("-- Ch\u1EC9 \u0111\u01B0\u1EE3c nh\u1EADp s\u1ED1 th\u00F4i, 4 s\u1ED1 nh\u00E9 --");
     var password = input.question('Nhap mat khau: ');
     var passwordRegex = /^([0-9]){4,}$/;
     var testPass = passwordRegex.test(password);
     if (testPass == false) {
-        console.log('- Nhập sai rồi, nhập lại từ đầu nhé, ai bảo nhập sai chiiiiii -');
+        console.log('-- Nhập sai rồi, nhập lại từ đầu nhé, ai bảo nhập sai chiiiiii --');
+        menuLogin();
     }
     var newUser = new account_1.Account(id, name, password);
     listAccount.add(newUser);
