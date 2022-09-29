@@ -41,7 +41,7 @@ function login() {
     let idRegex = /^([0-9]){3,}$/;
     let testId = idRegex.test(id);
     if (testId == false) {
-        console.log(` Nhập lại đê`);
+        console.log(`!!! Nhập lại đê !!!`);
         menuLogin();
     }
 
@@ -50,7 +50,7 @@ function login() {
     let nameRegex = /^([A-Za-z]){5,}$/;
     let testName = nameRegex.test(name);
     if (testName == false) {
-        console.log(`-- Đã bảo nhập cho đúng rồi không nghe, nhập lại cả Id nhé --`);
+        console.log(`!!! Đã bảo nhập cho đúng rồi không nghe, nhập lại đê !!!`);
         menuLogin();
     }
 
@@ -59,12 +59,12 @@ function login() {
     let passwordRegex = /^([0-9]){4,}$/;
     let testPass = passwordRegex.test(password);
     if (testPass == false) {
-        console.log('-- Nhập sai rồi, nhập lại từ đầu nhé, ai bảo nhập sai chiiiiii --');
+        console.log('!!! Nhập sai rồi, nhập lại từ đầu nhé, ai bảo nhập sai chiiiiii !!!');
     }
 
 
     if (listAccount.listAccount.length == 0) {
-        console.log('!!!Dang nhap that bai, vui long nhap lai hoac tao tai khoan moi!!!');
+        console.log('!!! Dang nhap that bai, vui long nhap lai hoac tao tai khoan moi !!!');
     }
 
     for (let i = 0; i < listAccount.listAccount.length; i++) {
@@ -73,7 +73,7 @@ function login() {
             userCheck = listAccount.listAccount[i];
             menuAlbum();
         } else {
-            console.log('!!!Dang nhap that bai, vui long nhap lai hoac tao tai khoan moi!!!');
+            console.log('!!! Dang nhap that bai, vui long nhap lai hoac tao tai khoan moi !!!');
         }
     }
 }
@@ -85,7 +85,7 @@ function signUp() {
     let idRegex = /^([0-9]){3,}$/;
     let testId = idRegex.test(id);
     if (testId == false) {
-        console.log(`- Nhập lại đê -`);
+        console.log(`!!! Nhập lại đê !!!`);
         menuLogin();
     }
 
@@ -102,7 +102,7 @@ function signUp() {
     let nameRegex = /^([A-Za-z]){5,}$/;
     let testName = nameRegex.test(name);
     if (testName == false) {
-        console.log(`-- Đã bảo nhập cho đúng rồi không nghe, nhập lại cả Id nhé --`);
+        console.log(`!!! Đã bảo nhập cho đúng rồi không nghe, nhập lại đê !!!`);
         menuLogin();
     }
 
@@ -111,7 +111,7 @@ function signUp() {
     let passwordRegex = /^([0-9]){4,}$/;
     let testPass = passwordRegex.test(password);
     if (testPass == false) {
-        console.log('-- Nhập sai rồi, nhập lại từ đầu nhé, ai bảo nhập sai chiiiiii --');
+        console.log('!!! Nhập sai rồi, nhập lại từ đầu nhé, ai bảo nhập sai chiiiiii !!!');
         menuLogin();
     }
     let newUser = new Account(id, name, password);
